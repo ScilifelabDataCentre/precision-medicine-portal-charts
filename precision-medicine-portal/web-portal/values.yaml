@@ -1,0 +1,21 @@
+name: precision-medicine-portal
+
+deployment:
+  replicas: 3
+  container:
+    name: pmp-web-app
+    frontendImage: ghcr.io/scilifelabdatacentre/precision-medicine-portal-frontend:0.2.1
+    backendImage: ghcr.io/scilifelabdatacentre/precision-medicine-portal:0.0.2
+
+service:
+
+ingress:
+  enabled: false
+  host: "precision-medicine-portal.scilifelab.se"
+
+ingressLocal:
+  enabled: false
+  host: "precision-medicine-portal.test"
+
+np:
+  enabled: false
